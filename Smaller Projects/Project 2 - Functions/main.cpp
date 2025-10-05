@@ -4,6 +4,7 @@
 int main();
 void pattern(unsigned int n);
 unsigned int log10(unsigned int n);
+unsigned int count(unsigned int n, unsigned int bit);
 
 // this function take in n and output a pattern of * base on the n value
 void pattern(unsigned int n) {
@@ -31,6 +32,7 @@ void pattern(unsigned int n) {
     }
 }
 
+// this function take the input n and calculate log10(n)
 unsigned int log10(unsigned int n) {
     unsigned int count{0};
     while (n >= 10) {
@@ -38,6 +40,10 @@ unsigned int log10(unsigned int n) {
         count++;
     }
     return count;
+}
+
+unsigned int count(unsigned int n, unsigned int bit) {
+    return 0;
 }
 
 int main () {
@@ -54,6 +60,8 @@ int main () {
     std::cin >> logn;
     result = log10(logn);
     std::cout << "result: " << result << std::endl;
+
+    
     
     return 0;
 }
