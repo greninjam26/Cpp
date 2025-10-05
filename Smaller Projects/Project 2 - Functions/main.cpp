@@ -42,8 +42,16 @@ unsigned int log10(unsigned int n) {
     return count;
 }
 
+// this function take in a number and a bit(0, 1), then check the number of the bit is showed up in the binary version of the number
 unsigned int count(unsigned int n, unsigned int bit) {
-    return 0;
+    unsigned int counter{0};
+    while (n > 0) {
+        if (n%2 == bit) {
+            counter++;
+        }
+        n /= 2;
+    }
+    return counter;
 }
 
 int main () {
@@ -61,7 +69,16 @@ int main () {
     result = log10(logn);
     std::cout << "result: " << result << std::endl;
 
-    
+    // third function
+    unsigned int inital_number{0};
+    unsigned int bit_check{0};
+    unsigned int bit_count{0};
+    std::cout << "Please enter the number to be checked: ";
+    std::cin >> inital_number;
+    std::cout << "Please enter the bit you want to check: ";
+    std::cin >> bit_check;
+    bit_count = count(inital_number, bit_check);
+    std::cout << bit_count << std::endl;
     
     return 0;
 }
