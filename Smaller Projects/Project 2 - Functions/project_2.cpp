@@ -57,7 +57,6 @@ unsigned int count(unsigned int n, unsigned int bit) {
         n /= 2;
         bits++;
     }
-    std::cout << bits << std::endl;
     if (bit == 0) {
         counter += (32-bits);
     }
