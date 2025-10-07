@@ -29,6 +29,9 @@ int main() {
     // remove the last digit of the binary number
     std::cout << "right: " << (0b110 >> 1) << std::endl;
 
+    // swapping bytes
+    std::cout << (2 << 8) << std::endl;
+
     // meaning leaving without an error
     return 0;
 }
