@@ -30,7 +30,8 @@ int main() {
     std::cout << "right: " << (0b110 >> 1) << std::endl;
 
     // swapping bytes
-    std::cout << (2 << 8) << std::endl;
+    std::cout << (2147483647 << 1) << std::endl;
+    std::cout << (-2 >> 2) << std::endl;
 
     // meaning leaving without an error
     return 0;
