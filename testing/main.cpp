@@ -33,6 +33,11 @@ int main() {
     std::cout << (2147483647 << 1) << std::endl;
     std::cout << (-2 >> 2) << std::endl;
 
+    // just declaring and output
+    double hii;
+    // hii /= 10;
+    std::cout << hii << std::endl;
+
     // meaning leaving without an error
     return 0;
 }
