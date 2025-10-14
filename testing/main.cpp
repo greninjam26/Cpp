@@ -38,6 +38,13 @@ int main() {
     // hii /= 10;
     std::cout << hii << std::endl;
 
+    // checking the size of each data type
+    std::cout << "char:       " << sizeof( char )      << std::endl;
+    std::cout << "short:      " << sizeof( short )     << std::endl;
+    std::cout << "int:        " << sizeof( int )       << std::endl;
+    std::cout << "long:       " << sizeof( long )      << std::endl;
+    std::cout << "long long:  " << sizeof( long long ) << std::endl;
+
     // meaning leaving without an error
     return 0;
 }
