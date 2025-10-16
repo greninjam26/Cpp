@@ -45,6 +45,24 @@ int main() {
     std::cout << "long:       " << sizeof( long )      << std::endl;
     std::cout << "long long:  " << sizeof( long long ) << std::endl;
 
+    // array size
+    int array_0[1];  //   4 bytes = 0x04 bytes
+    int array_00[5];  //  20 bytes = 0x14 bytes
+    int array_1[12]; //  48 bytes = 0x30 bytes
+    int array_2[20]; //  80 bytes = 0x50 bytes
+    int array_3[52]; // 208 bytes = 0xd0 bytes
+    int array_4[52]; // 208 bytes = 0xd0 bytes
+    int array_5[4];  //  16 bytes = 0x10 bytes
+
+    std::cout << array_0 << std::endl;
+    std::cout << array_00 << std::endl;
+    std::cout << array_1 << std::endl;
+    std::cout << array_2 << std::endl;
+    std::cout << array_3 << std::endl;
+    std::cout << array_4 << std::endl;
+    std::cout << array_5 << std::endl;
+
+
     // meaning leaving without an error
     return 0;
 }
