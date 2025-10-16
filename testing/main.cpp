@@ -62,6 +62,14 @@ int main() {
     std::cout << array_4 << std::endl;
     std::cout << array_5 << std::endl;
 
+    // c-styled string
+    char strings[3]{'G', 'o', '\0'};
+    // without the \0 it just keep going
+    char stringss[3]{'G', 'o', 'o'};
+    
+    std::cout << "string: " << strings << std::endl;
+    std::cout << "strings: " << stringss << std::endl;
+
 
     // meaning leaving without an error
     return 0;
