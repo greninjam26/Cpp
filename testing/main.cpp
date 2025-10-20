@@ -70,6 +70,13 @@ int main() {
     std::cout << "string: " << strings << std::endl;
     std::cout << "strings: " << stringss << std::endl;
 
+    // testing out mod(%)
+    std::cout << "??" << (-6%16) << std::endl;
+    int a{-6};
+    int b{16};
+    int r = a%b;
+    std::cout << "?" << r << std::endl;
+
 
     // meaning leaving without an error
     return 0;
