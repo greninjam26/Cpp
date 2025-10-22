@@ -22,11 +22,12 @@ int reverse(int n) {
         n /= 10;
         counter++;
     }
-    for (int i = counter-1; i >= 0; i--) {
+    for (int i = 0; i < counter; i++) {
         inversed += int_digit[i];
         inversed *= 10;
         // std::cout << "?" << inversed << std::endl;
     }
+    inversed /= 10;
     if (is_negative) {
         inversed *= -1;
     }
