@@ -78,7 +78,7 @@ int main() {
     std::cout << "?" << r << std::endl;
 
     // testing output
-    std::cout << " /" << std::endl;
+    std::cout << "\\" << std::endl;
 
 
     // meaning leaving without an error
