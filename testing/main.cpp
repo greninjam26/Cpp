@@ -77,6 +77,9 @@ int main() {
     int r = a%b;
     std::cout << "?" << r << std::endl;
 
+    // testing output
+    std::cout << " /" << std::endl;
+
 
     // meaning leaving without an error
     return 0;
