@@ -80,6 +80,11 @@ int main() {
     // testing output
     std::cout << "\\" << std::endl;
 
+    char testingcs = 'e';
+    char cstrings[1];
+    cstrings[0] = 'h';
+    std::cout << "strings: " << cstrings << std::endl;
+
 
     // meaning leaving without an error
     return 0;
