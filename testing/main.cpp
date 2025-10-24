@@ -80,6 +80,7 @@ int main() {
     // testing output
     std::cout << "\\" << std::endl;
 
+    // working c-styled string that takes other values in the callstack
     char testingcs = 'e';
     char cstrings[1];
     cstrings[0] = 'h';
