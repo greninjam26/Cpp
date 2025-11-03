@@ -43,7 +43,8 @@ double *cross_correlation(double array0[], std::size_t cap0, double array1[], st
 }
 
 /**
- * 
+ * this function will move all the duplicated elements to the back of the array
+ * @return the number of unique element in the array
  */
 std::size_t shift_duplicates(int array[], std::size_t capacity) {
     std::size_t unique_count{0};
@@ -71,7 +72,7 @@ std::size_t shift_duplicates(int array[], std::size_t capacity) {
 }
 
 /**
- * 
+ * clear the double pointer and deallocate it
  */
 void deallocate(double* &ptr, bool is_array, std::size_t capacity = 0) {
     std::cout << "????" << std::endl;
