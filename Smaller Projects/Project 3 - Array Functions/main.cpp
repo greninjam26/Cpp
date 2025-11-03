@@ -50,10 +50,9 @@ std::size_t shift_duplicates(int array[], std::size_t capacity) {
     std::size_t dup_count{0};
     while (unique_count+dup_count < capacity) {
         bool is_dup{false};
-        std::size_t cur = unique_count+dup_count;
-        for (std::size_t i{0}; i < cur; i++) {
-            if (array[i] == array[cur]) {
-                for (std::size_t c{cur+1}; c < capacity; ++c) {
+        for (std::size_t i{0}; i < unique_count; i++) {
+            if (array[i] == array[unique_count]) {
+                for (std::size_t c{unique_count+1}; c < capacity; ++c) {
                     int temp = array[c-1];
                     array[c-1] = array[c];
                     array[c] = temp;
