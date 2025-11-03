@@ -46,17 +46,37 @@ double *cross_correlation(double array0[], std::size_t cap0, double array1[], st
  * 
  */
 std::size_t shift_duplicates(int array[], std::size_t capacity) {
-    std::size_t ans{0};
+    std::size_t unique_count{0};
+    std::size_t dup_count{0};
+    while (unique_count+dup_count < capacity) {
+        bool is_dup{false};
+        std::size_t cur = unique_count+dup_count;
+        for (std::size_t i{0}; i < cur; i++) {
+            if (array[i] == array[cur]) {
+                for (std::size_t c{cur+1}; c < capacity; ++c) {
+                    int temp = array[c-1];
+                    array[c-1] = array[c];
+                    array[c] = temp;
+                }
+                ++dup_count;
+                is_dup = true;
+                break;
+            }
+        }
+        if (!is_dup) {
+            ++unique_count;
+        }
+    }
 
-    return ans;
+    return unique_count;
 }
 
 /**
  * 
  */
-void deallocate(double *&ptr, bool is_array, std::size_t capacity = 0) {
+// void deallocate(double *&ptr, bool is_array, std::size_t capacity = 0) {
 
-}
+// }
 
 int main() {
     // first function
@@ -72,6 +92,12 @@ int main() {
     std::cout << correlations << std::endl;
 
     // third function
+    int testing[7]{1, 3, 2, 3, 3, 2, 4};
+    std::size_t count = shift_duplicates(testing, 7);
+    for (int i{0}; i < 7; ++i) {
+        std::cout << i << "." << testing[i] << std::endl;
+    }
+    std::cout << count << std::endl;
 
     // fourth function
 
