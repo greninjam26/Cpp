@@ -5,7 +5,7 @@ int main();
 double *geometric(double a, double ratio, std::size_t cap);
 double *cross_correlation(double array0[], std::size_t cap0, double array1[], std::size_t cap1);
 std::size_t shift_duplicates(int array[], std::size_t capacity);
-void deallocate(double *&ptr, bool is_array, std::size_t capacity = 0);
+void deallocate(double *&ptr, bool is_array, std::size_t capacity);
 
 /**
  * @param (the first term of the geometric sequence) a
@@ -73,9 +73,22 @@ std::size_t shift_duplicates(int array[], std::size_t capacity) {
 /**
  * 
  */
-// void deallocate(double *&ptr, bool is_array, std::size_t capacity = 0) {
-
-// }
+void deallocate(double* &ptr, bool is_array, std::size_t capacity = 0) {
+    std::cout << "????" << std::endl;
+    if (is_array) {
+        for (int i{0}; i < capacity; ++i) {
+            ptr[i] = 0;
+        }
+        std::cout << "::" << std::endl;
+        // delete[] ptr;
+    }
+    else {
+        ptr = 0;
+        // delete ptr;
+    }
+    std::cout << ":" << std::endl;
+    ptr = nullptr;
+}
 
 int main() {
     // first function
@@ -91,14 +104,18 @@ int main() {
     std::cout << correlations << std::endl;
 
     // third function
-    int testing[7]{1, 3, 2, 3, 3, 2, 4};
-    std::size_t count = shift_duplicates(testing, 7);
-    for (int i{0}; i < 7; ++i) {
+    int testing[10]{5, 4, 2, 2, 2, 4, 5, 1, 4, 3};
+    std::size_t count = shift_duplicates(testing, 10);
+    for (int i{0}; i < 10; ++i) {
         std::cout << i << "." << testing[i] << std::endl;
     }
     std::cout << count << std::endl;
 
     // fourth function
+    double test[10]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    double* tests = test;
+    deallocate(tests, true, 10);
+    std::cout << "?" << std::endl;
 
     return 0;
 }
