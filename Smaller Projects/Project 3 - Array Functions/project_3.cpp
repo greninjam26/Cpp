@@ -80,19 +80,16 @@ std::size_t shift_duplicates(int array[], std::size_t capacity) {
  * clear the double pointer and deallocate it
  */
 void deallocate(double* &ptr, bool is_array, std::size_t capacity = 0) {
-    std::cout << "????" << std::endl;
     if (is_array) {
-        for (int i{0}; i < capacity; ++i) {
+        for (std::size_t i{0}; i < capacity; ++i) {
             ptr[i] = 0;
         }
-        std::cout << "::" << std::endl;
-        // delete[] ptr;
+        delete[] ptr;
     }
     else {
-        ptr = 0;
-        // delete ptr;
+        *ptr = 0;
+        delete ptr;
     }
-    std::cout << ":" << std::endl;
     ptr = nullptr;
 }
 

@@ -81,14 +81,14 @@ std::size_t shift_duplicates(int array[], std::size_t capacity) {
  */
 void deallocate(double* &ptr, bool is_array, std::size_t capacity = 0) {
     if (is_array) {
-        for (int i{0}; i < capacity; ++i) {
+        for (std::size_t i{0}; i < capacity; ++i) {
             ptr[i] = 0;
         }
-        // delete[] ptr;
+        delete[] ptr;
     }
     else {
-        ptr = 0;
-        // delete ptr;
+        *ptr = 0;
+        delete ptr;
     }
     ptr = nullptr;
 }
