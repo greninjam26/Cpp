@@ -11,7 +11,20 @@ std::size_t length( char const *a ){
     return count;
 }
 int compare( char const *str1, char const *str2 ){
-    return 0;
+    int i{0};
+    int ans{0};
+    while (str1[i] != '\0' || str2[i] != '\0') {
+        if (str1[i] < str2[i]) {
+            --ans;
+            break;
+        }
+        else if (str1[i] > str2[i]) {
+            ++ans;
+            break;
+        }
+        ++i;
+    }
+    return ans;
 }
 void assign( char *str1, char const *str2 ){}
 unsigned int distance( char const *str1, char const *str2 ){
