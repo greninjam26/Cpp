@@ -12,19 +12,16 @@ std::size_t length( char const *a ){
 }
 int compare( char const *str1, char const *str2 ){
     int i{0};
-    int ans{0};
     while (str1[i] != '\0' || str2[i] != '\0') {
         if (str1[i] < str2[i]) {
-            --ans;
-            break;
+            return -1;
         }
         else if (str1[i] > str2[i]) {
-            ++ans;
-            break;
+            return 1;
         }
         ++i;
     }
-    return ans;
+    return 0;
 }
 void assign( char *str1, char const *str2 ){
     int i{0};
@@ -47,7 +44,13 @@ unsigned int distance( char const *str1, char const *str2 ){
     return std::min(std::min(distance(str1, str2+1), distance(str1+1, str2)), distance(str1+1, str2+1))+1;
 }
 std::size_t is_sorted( char *array[], std::size_t capacity ){
-    return 0;
+    for (std::size_t i{1}; i < capacity; ++i) {
+        std::cout << array[i] << " " << array[i-1] << std::endl;
+        if(compare(array[i], array[i-1]) == -1) {
+            return i;
+        }
+    }
+    return capacity;
 }
 void insert( char *array[], std::size_t capacity ){}
 void insertion_sort( char *array[], std::size_t capacity ){}
