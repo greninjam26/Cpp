@@ -2,7 +2,13 @@
 #include <iostream>
 
 std::size_t length( char const *a ){
-    return 0;
+    std::size_t count{0};
+    std::size_t i{0};
+    while (a[i] != '\0') {
+        ++count;
+        ++i;
+    }
+    return count;
 }
 int compare( char const *str1, char const *str2 ){
     return 0;
