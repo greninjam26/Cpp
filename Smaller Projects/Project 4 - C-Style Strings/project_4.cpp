@@ -64,7 +64,11 @@ void insert( char *array[], std::size_t capacity ){
         }
     }
 }
-void insertion_sort( char *array[], std::size_t capacity ){}
+void insertion_sort( char *array[], std::size_t capacity ){
+    for (std::size_t i{2}; i <= capacity; ++i) {
+        insert(array, i);
+    }
+}
 std::size_t remove_duplicates( char *array[], std::size_t capacity ){
     return 0;
 }
