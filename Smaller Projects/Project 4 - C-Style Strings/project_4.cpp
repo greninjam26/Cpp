@@ -34,7 +34,17 @@ void assign( char *str1, char const *str2 ){
     }
 }
 unsigned int distance( char const *str1, char const *str2 ){
-    return 0;
+    // std::cout << str1 << "????" << str2 << std::endl;
+    if (str1[0] == '\0') {
+        return length(str2);
+    }
+    if (str2[0] == '\0') {
+        return length(str1);
+    }
+    if (str1[0] == str2[0]) {
+        return distance(str1+1, str2+1);
+    }
+    return std::min(std::min(distance(str1, str2+1), distance(str1+1, str2)), distance(str1+1, str2+1))+1;
 }
 std::size_t is_sorted( char *array[], std::size_t capacity ){
     return 0;
