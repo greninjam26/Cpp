@@ -51,14 +51,27 @@ int main() {
 
     // insert
     insert(test_words, num_test_words);
-    // for (int i{0}; i < num_test_words; ++i) {
-    //     std::cout << test_words[i] << std::endl;
-    // }
+    for (int i{0}; i < num_test_words; ++i) {
+        std::cout << test_words[i] << std::endl;
+    }
     num_sorted = is_sorted( test_words, num_test_words );
     if ( num_sorted == num_test_words ) {
         std::cout << "The new test_words array is sorted." << std::endl;
     } else {
         std::cout << "Only the first " << num_sorted << " new words are sorted." << std::endl;
+    }
+
+    // insertion sort
+    insertion_sort(test_words, num_test_words);
+    for (int i{0}; i < num_test_words; ++i) {
+        std::cout << test_words[i] << std::endl;
+    }
+    
+
+    // remove duplicates
+    remove_duplicates(test_words, num_test_words);
+    for (int i{0}; i < num_test_words; ++i) {
+        std::cout << test_words[i] << std::endl;
     }
 
     /// Insert additional tests as needed

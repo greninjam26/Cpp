@@ -25,10 +25,11 @@ int compare( char const *str1, char const *str2 ){
 }
 void assign( char *str1, char const *str2 ){
     int i{0};
-    while (str1[i] != '\0' || str2[i] != '\0') {
+    while (str2[i] != '\0') {
         str1[i] = str2[i];
         ++i;
     }
+    str1[i] = str2[i];
 }
 unsigned int distance( char const *str1, char const *str2 ){
     // std::cout << str1 << "????" << str2 << std::endl;
@@ -70,6 +71,15 @@ void insertion_sort( char *array[], std::size_t capacity ){
     }
 }
 std::size_t remove_duplicates( char *array[], std::size_t capacity ){
+    for (std::size_t i{0}; i < capacity-2; ++i) {
+        if (compare(array[i], array[i+1]) == 0) {
+            assign(array[i+1], array[i+2]);
+        }
+    }
+    if (compare(array[capacity-2], array[capacity-1]) == 0) {
+        char zero[50]{""};
+        assign(array[capacity-1], zero);
+    }
     return 0;
 }
 std::size_t find( char *array[], std::size_t capacity, char const *str ){
