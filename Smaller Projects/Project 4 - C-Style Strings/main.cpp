@@ -34,7 +34,7 @@ int main() {
     }
 
     // assign
-    assign(test_string, "bird");
+    assign(test_string, "abb");
     std::cout << test_string << std::endl;
     
     // distance
@@ -74,7 +74,8 @@ int main() {
         std::cout << test_words[i] << std::endl;
     }
 
-    /// Insert additional tests as needed
+    // find
+    std::cout << find(test_words, num_test_words, test_string) << std::endl;
 
     // deallocate
     free_word_array(test_words);

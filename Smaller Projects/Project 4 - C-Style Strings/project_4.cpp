@@ -83,7 +83,26 @@ std::size_t remove_duplicates( char *array[], std::size_t capacity ){
     return 0;
 }
 std::size_t find( char *array[], std::size_t capacity, char const *str ){
-    return 0;
+    unsigned int ans_distance{0};
+    std::size_t ans{0};
+    for (std::size_t i{0}; i < capacity; ++i) {
+        if (compare(array[i], str) == 0) {
+            return i;
+        }
+        else {
+            unsigned int cur_distance{distance(array[i], str)};
+            if (cur_distance < ans_distance) {
+                ans_distance = cur_distance;
+                ans = i;
+            }
+        }
+    }
+    return ans;
 }
 
-void free_word_array( char** word_array ){}
+void free_word_array( char** word_array ){
+    delete[] word_array[0];
+    delete[] word_array;
+    word_array[0] = nullptr;
+    word_array = nullptr;
+}
